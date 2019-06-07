@@ -8,7 +8,7 @@ Currently supports all Steam versions from 1.0.0 to 1.0.5 and GoG 1.0.0, I don't
 
 **Using this on speedrun mode can mess up your best time records!** Be careful with finishing stages if they're important to you.
 
-# Todo
+## Todo
 
 * Save hotkeys
 * Force speedrun stage timer to something high to prevent fake best time records
