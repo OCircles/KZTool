@@ -6,6 +6,10 @@ Currently supports all Steam versions from 1.0.0 to 1.0.5 and GoG 1.0.0, I don't
 * Switching between certain rooms can crash your game, if that happens just try switching from another room
 * Using hard reset (force reload the room, useful during replays or cutscenes) can also crash for some reason, so you might want to rebind it from R.
 
-Currently hotkeys are not saved; I was about to add it then I got sidetracked, next update will have it though.
+**Using this on speedrun mode can mess up your best time records!** Be careful with finishing stages if they're important to you.
 
-Do note that using this on speedrun mode can mess up your golds (I have a 30s gold on chinatown now lol). I have an idea on how to circumvent this, but for now you'll just have to live with it.
+# Todo
+
+* Save hotkeys
+* Force speedrun stage timer to something high to prevent fake best time records
+* Add offsets to an embedded XML list for easier maintenance and cleaner code
