@@ -1,0 +1,526 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Root>
+  
+  <Category>
+
+    <Name>Factory</Name>
+  
+    <Room>
+      <Name>Factory-1</Name>
+      <ID>6</ID>
+    </Room>
+  
+    <Room>
+      <Name>Factory-2</Name>
+      <ID>8</ID>
+    </Room>
+
+    <Room>
+      <Name>Factory-3</Name>
+      <ID>9</ID>
+    </Room>
+
+    <Room>
+      <Name>Factory-4</Name>
+      <ID>10</ID>
+    </Room>
+
+    <Room>
+      <Name>Factory-5</Name>
+      <ID>11</ID>
+    </Room>
+
+  </Category>
+
+  <Category>
+
+    <Name>Hotel</Name>
+
+    <Room>
+      <Name>Hotel-1</Name>
+      <ID>14</ID>
+    </Room>
+
+    <Room>
+      <Name>Hotel-2</Name>
+      <ID>15</ID>
+    </Room>
+
+    <Room>
+      <Name>Hotel-3</Name>
+      <ID>16</ID>
+    </Room>
+
+    <Room>
+      <Name>Hotel-4</Name>
+      <ID>17</ID>
+    </Room>
+
+    <Room>
+      <Name>Hotel-5</Name>
+      <ID>18</ID>
+    </Room>
+
+    <Room>
+      <Name>Hotel-6</Name>
+      <ID>19</ID>
+    </Room>
+
+  </Category>
+
+  <Category>
+
+    <Name>Club Neon</Name>
+
+    <Room>
+      <Name>Club-1</Name>
+      <ID>22</ID>
+    </Room>
+
+    <Room>
+      <Name>Club-2</Name>
+      <ID>23</ID>
+    </Room>
+
+    <Room>
+      <Name>Club-3</Name>
+      <ID>24</ID>
+    </Room>
+
+    <Room>
+      <Name>Club-4</Name>
+      <ID>25</ID>
+    </Room>
+
+    <Room>
+      <Name>Club-5</Name>
+      <ID>26</ID>
+    </Room>
+
+    <Room>
+      <Name>Club-6</Name>
+      <ID>27</ID>
+    </Room>
+
+    <Room>
+      <Name>Club-7</Name>
+      <ID>30</ID>
+    </Room>
+
+  </Category>
+
+  <Category>
+
+    <Name>Prison</Name>
+
+    <Room>
+      <Name>Prison-1</Name>
+      <ID>31</ID>
+    </Room>
+
+    <Room>
+      <Name>Prison-2</Name>
+      <ID>33</ID>
+    </Room>
+
+    <Room>
+      <Name>Prison-3</Name>
+      <ID>37</ID>
+    </Room>
+
+    <Room>
+      <Name>Prison-4</Name>
+      <ID>39</ID>
+    </Room>
+
+    <Room>
+      <Name>Prison-5</Name>
+      <ID>40</ID>
+    </Room>
+
+    <Room>
+      <Name>Prison-6</Name>
+      <ID>38</ID>
+    </Room>
+
+    <Room>
+      <Name>Prison-7</Name>
+      <ID>34</ID>
+    </Room>
+
+    <Room>
+      <Name>Prison-8</Name>
+      <ID>32</ID>
+    </Room>
+
+  </Category>
+
+  <Category>
+
+    <Name>Studio 51</Name>
+
+    <Room>
+      <Name>Studio-1</Name>
+      <ID>46</ID>
+    </Room>
+
+
+    <Category>
+
+      <Name>Lobby</Name>
+
+      <Room>
+        <Name>Lobby-1</Name>
+        <ID>47</ID>
+      </Room>
+
+      <Room>
+        <Name>Lobby-2</Name>
+        <ID>57</ID>
+      </Room>
+
+    </Category>
+
+    <Category>
+
+      <Name>Quiet Hills</Name>
+
+      <Room>
+        <Name>Quiet Hills-1</Name>
+        <ID>51</ID>
+      </Room>
+
+      <Room>
+        <Name>Quiet Hills-2</Name>
+        <ID>52</ID>
+      </Room>
+
+      <Room>
+        <Name>Quiet Hills-3</Name>
+        <ID>53</ID>
+      </Room>
+
+    </Category>
+
+    <Category>
+
+      <Name>Space Uncertainty</Name>
+
+      <Room>
+        <Name>Space Uncertainty-1</Name>
+        <ID>48</ID>
+      </Room>
+
+      <Room>
+        <Name>Space Uncertainty-2</Name>
+        <ID>49</ID>
+      </Room>
+      
+      <Room>
+        <Name>Space Uncertainty-3</Name>
+        <ID>50</ID>
+      </Room>
+      
+    </Category>
+
+    <Category>
+
+      <Name>Chapel of Doom</Name>
+
+      <Room>
+        <Name>Chapel of Doom-1</Name>
+        <ID>54</ID>
+      </Room>
+
+      <Room>
+        <Name>Chapel of Doom-2</Name>
+        <ID>55</ID>
+      </Room>
+
+      <Room>
+        <Name>Chapel of Doom-3</Name>
+        <ID>56</ID>
+      </Room>
+
+    </Category>
+
+    <Room>
+      <Name>Studio-2</Name>
+      <ID>58</ID>
+    </Room>
+
+    <Room>
+      <Name>Studio Finale</Name>
+      <ID>59</ID>
+    </Room>
+
+  </Category>
+
+  <Category>
+
+    <Name>Mansion Hideout</Name>
+
+    <Room>
+      <Name>Mansion Hideout-1</Name>
+      <ID>60</ID>
+    </Room>
+
+    <Room>
+      <Name>Mansion Hideout-2</Name>
+      <ID>61</ID>
+    </Room>
+
+    <Room>
+      <Name>Mansion Hideout-3</Name>
+      <ID>62</ID>
+    </Room>
+
+    <Room>
+      <Name>Mansion Hideout-4</Name>
+      <ID>63</ID>
+    </Room>
+
+    <Room>
+      <Name>Mansion Hideout-5</Name>
+      <ID>64</ID>
+    </Room>
+
+    <Room>
+      <Name>Mansion Hideout-6</Name>
+      <ID>65</ID>
+    </Room>
+
+    <Room>
+      <Name>Mansion Hideout Kissyface</Name>
+      <ID>66</ID>
+    </Room>
+
+    <Room>
+      <Name>Mansion Hideout Finale</Name>
+      <ID>68</ID>
+    </Room>
+
+  </Category>
+
+  <Category>
+
+    <Name>Chinatown</Name>
+
+    <Room>
+      <Name>Chinatown-1</Name>
+      <ID>71</ID>
+    </Room>
+
+    <Room>
+      <Name>Chinatown-2</Name>
+      <ID>72</ID>
+    </Room>
+
+    <Room>
+      <Name>Chinatown-3</Name>
+      <ID>73</ID>
+    </Room>
+
+    <Room>
+      <Name>Chinatown-4</Name>
+      <ID>74</ID>
+    </Room>
+
+    <Room>
+      <Name>Chinatown-5</Name>
+      <ID>75</ID>
+    </Room>
+
+    <Room>
+      <Name>Chinatown-6</Name>
+      <ID>76</ID>
+    </Room>
+
+    <Room>
+      <Name>Chinatown-7</Name>
+      <ID>77</ID>
+    </Room>
+
+    <Room>
+      <Name>Chinatown-8</Name>
+      <ID>78</ID>
+    </Room>
+
+  </Category>
+
+  <Category>
+
+    <Name>Dragon Tape</Name>
+
+    <Room>
+      <Name>Dragon Tape-1</Name>
+      <ID>80</ID>
+    </Room>
+
+    <Room>
+      <Name>Dragon Tape-2</Name>
+      <ID>81</ID>
+    </Room>
+
+    <Room>
+      <Name>Dragon Tape-3</Name>
+      <ID>82</ID>
+    </Room>
+
+    <Room>
+      <Name>Dragon Tape-4</Name>
+      <ID>83</ID>
+    </Room>
+    
+  </Category>
+
+  <Category>
+
+    <Name>Slaughterhouse</Name>
+
+    <Room>
+      <Name>Slaughterhouse-1</Name>
+      <ID>92</ID>
+    </Room>
+
+    <Room>
+      <Name>Slaughterhouse-2</Name>
+      <ID>93</ID>
+    </Room>
+
+    <Room>
+      <Name>Slaughterhouse-3</Name>
+      <ID>94</ID>
+    </Room>
+
+    <Room>
+      <Name>Slaughterhouse-4</Name>
+      <ID>95</ID>
+    </Room>
+
+    <Room>
+      <Name>Slaughterhouse-5</Name>
+      <ID>96</ID>
+    </Room>
+
+    <Room>
+      <Name>Slaughterhouse-6</Name>
+      <ID>97</ID>
+    </Room>
+
+    <Room>
+      <Name>Slaughterhouse-7</Name>
+      <ID>98</ID>
+    </Room>
+
+    <Room>
+      <Name>Slaughterhouse-8</Name>
+      <ID>99</ID>
+    </Room>
+
+    <Room>
+      <Name>Slaughterhouse-9</Name>
+      <ID>100</ID>
+    </Room>
+
+    <Room>
+      <Name>Slaughterhouse-10</Name>
+      <ID>101</ID>
+    </Room>
+
+    <Room>
+      <Name>Slaughterhouse-11</Name>
+      <ID>102</ID>
+    </Room>
+
+  </Category>
+
+  <Category>
+
+    <Name>Bunker</Name>
+
+    <Room>
+      <Name>Bunker-1</Name>
+      <ID>105</ID>
+    </Room>
+
+    <Room>
+      <Name>Bunker-2</Name>
+      <ID>106</ID>
+    </Room>
+
+    <Room>
+      <Name>Bunker-3</Name>
+      <ID>107</ID>
+    </Room>
+
+    <Room>
+      <Name>Bunker-4</Name>
+      <ID>108</ID>
+    </Room>
+
+    <Room>
+      <Name>Bunker-5</Name>
+      <ID>109</ID>
+    </Room>
+
+    <Room>
+      <Name>Bunker-6</Name>
+      <ID>110</ID>
+    </Room>
+
+    <Room>
+      <Name>Bunker-7</Name>
+      <ID>111</ID>
+    </Room>
+
+    <Room>
+      <Name>Bunker-8</Name>
+      <ID>112</ID>
+    </Room>
+
+    <Room>
+      <Name>Bunker-9</Name>
+      <ID>113</ID>
+    </Room>
+
+    <Room>
+      <Name>Bunker-10</Name>
+      <ID>114</ID>
+    </Room>
+    
+  </Category>
+
+  <Category>
+
+    <Name>Bunker pt.2</Name>
+
+    <Room>
+      <Name>Bunker2-1</Name>
+      <ID>117</ID>
+    </Room>
+
+    <Room>
+      <Name>Bunker2-2</Name>
+      <ID>118</ID>
+    </Room>
+
+    <Room>
+      <Name>Bunker2-3</Name>
+      <ID>119</ID>
+    </Room>
+
+    <Room>
+      <Name>Bunker2-4</Name>
+      <ID>120</ID>
+    </Room>
+
+    <Room>
+      <Name>Bunker2-5</Name>
+      <ID>121</ID>
+    </Room>
+    
+  </Category>
+  
+</Root>
