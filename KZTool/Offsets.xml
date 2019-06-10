@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Root>
+  
+  <RoomOffset>
+    <Name>1.0.0 (Steam)</Name>
+    <Offset>1BC5898</Offset>
+  </RoomOffset>
+
+  <RoomOffset>
+    <Name>1.0.0 Speedrun Beta (Steam)</Name>
+    <Offset>01C3E7E8</Offset>
+  </RoomOffset>
+
+  <RoomOffset>
+    <Name>1.0.4 (Steam)</Name>
+    <Offset>01CF6840</Offset>
+  </RoomOffset>
+
+  <RoomOffset>
+    <Name>1.0.5 (Steam)</Name>
+    <Offset>1CF8900</Offset>
+  </RoomOffset>
+
+
+
+  <RoomOffset>
+    <Name>1.0.0 (GoG)</Name>
+    <Offset>1CF8900</Offset>
+  </RoomOffset>
+
+  <RoomOffset>
+    <Name>1.0.5 (GoG)</Name>
+    <Offset>1CF7890</Offset>
+  </RoomOffset>
+  
+</Root>

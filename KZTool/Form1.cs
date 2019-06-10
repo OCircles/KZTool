@@ -19,20 +19,15 @@ namespace KZTool
         [DllImport("user32.dll")]
         static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
 
-        private static int address_base = 0x1BC5898; // address_room, game ver 1.0.0
-
-        // These get adjusted based on what version of the game is found
-        private int address_room = 0x1BC5898; // base + 0
-        private int address_setroom = 0x1BC589C; // base + 4
+        private int address_room = 0x1BC5898; // This gets adjusted based on game version, see Offsets.xml and setGame()
 
         GlobalHotkey hotkey_restart;
         GlobalHotkey hotkey_nextRoom;
         GlobalHotkey hotkey_lastRoom;
         GlobalHotkey hotkey_setRoom;
 
-        
-
         Process game;
+
 
 
         // Form, hotkey processing in WndProc
@@ -91,7 +86,7 @@ namespace KZTool
             if (timer_switchLock.Enabled)
                 return;
 
-            Memory.WriteInt(game, address_setroom, room);
+            Memory.WriteInt(game, address_room + 4, room);
             timer_switchLock.Enabled = true;
         }
         private void setToTextbox()
@@ -107,56 +102,42 @@ namespace KZTool
 
             game = p;
 
-            // Identify version (this part is in dire need of cleanup, split into different functions)
+            // Identify version
 
-            if (Memory.ReadInt(game, address_base + 4) == -1) label1.Text = "Found Katana ZERO 1.0.0 (Steam)";
-            else if (Memory.ReadInt(game, address_base - 4160 + 4) == -1)
-            {
-                label1.Text = "Found Katana ZERO 1.0.0 (GoG)";
-                address_room = address_base - 4160;
-            }
-            else if (Memory.ReadInt(game, address_base + 495440 + 4) == -1)
-            {
-                label1.Text = "Found Katana ZERO 1.0.3 Speedrun Beta (Steam)";
-                address_room = address_base + 495440;
-            }
-            else if (Memory.ReadInt(game, address_base + 495440 - 4160 + 4) == -1)
-            {
-                label1.Text = "Found Katana ZERO 1.0.3 Speedrun Beta (GoG)";
-                address_room = address_base + 495440 - 4160;
-            }
-            else if (Memory.ReadInt(game, address_base + 1249192 + 4) == -1)
-            {
-                label1.Text = "Found Katana ZERO 1.0.4 (Steam)";
-                address_room = address_base + 1249192;
-            }
-            else if (Memory.ReadInt(game, address_base + 1249192 - 4160 + 4) == -1)
-            {
-                label1.Text = "Found Katana ZERO 1.0.4 (GoG)";
-                address_room = address_base + 1249192 - 4160;
-            }
-            else if (Memory.ReadInt(game, address_base + 1257576 + 4) == -1)
-            {
-                label1.Text = "Found Katana ZERO 1.0.5 (Steam)";
-                address_room = address_base + 1257576;
-            }
-            else
-            {
-                label1.Text = "Found game, but can't identify version";
-                return;
-            }
+            string s = GetResourceTextFile("Offsets.xml");
 
-            address_setroom = address_room + 4;
+            var doc = new XmlDocument();
+            doc.LoadXml(s);
 
-            timer1.Enabled = false;
-            timer_read.Enabled = true;
+            foreach (XmlNode a in doc.ChildNodes.Item(1).ChildNodes)
+            {
+                if (a.LocalName == "RoomOffset")
+                {
 
-            updateCurrentRoom();
+                    int address = int.Parse(a.ChildNodes.Item(1).InnerText, System.Globalization.NumberStyles.HexNumber);
 
-            groupBox1.Enabled = true;
+                    Console.WriteLine(address.ToString("X8"));
 
+                    if (Memory.ReadInt(game, address + 4) == -1)
+                    {
+                        // Game found
 
+                        label1.Text = "Found Katana ZERO " + a.ChildNodes.Item(0).InnerText;
+
+                        address_room = address;
+
+                        timer_findGame.Enabled = false;
+                        timer_read.Enabled = true;
+
+                        updateCurrentRoom();
+
+                        groupBox1.Enabled = true;
+                    }
+                }
+            }
         }
+
+
 
         // UI
         private void updateCurrentRoom() {
@@ -230,6 +211,41 @@ namespace KZTool
             textBox1.Text = ((int)(((MenuItem)sender).Tag)).ToString();
             setToTextbox();
         }
+        private void Hotkey_MouseDown(object sender, MouseEventArgs e)
+        {
+            ((TextBox)sender).Text = "";
+        }
+        private void Hotkey_KeyDown(object sender, KeyEventArgs e)
+        {
+            bool isLetterOrDigit = char.IsLetterOrDigit((char)e.KeyCode);
+
+            if (isLetterOrDigit)
+            {
+                // Format modifier text and generate modifier int for hotkey construction
+                string mod = "";
+                int imod = 0x0;
+
+                if (e.Modifiers.ToString() != "None")
+                {
+                    mod = e.Modifiers.ToString().Replace(",", " +") + " + ";
+
+                    foreach (var m in e.Modifiers.ToString().Replace(" ", "").Split(','))
+                    {
+                        if (m == "Control") imod += GlobalHotkey.Constants.CTRL;
+                        else if (m == "Alt") imod += GlobalHotkey.Constants.ALT;
+                        else if (m == "Shift") imod += GlobalHotkey.Constants.SHIFT;
+                    }
+                }
+
+                GlobalHotkey hotkey = (GlobalHotkey)(((TextBox)sender).Tag); // Textboxes are tagged with corresponding GlobalHotkey in Form1 constructor
+
+                hotkey.ChangeBind(imod, e.KeyCode);
+
+                ((TextBox)sender).Text = mod + e.KeyCode;
+            }
+        }
+
+
 
         // Timers
         private void timer_findgame_Tick(object sender, EventArgs e)
@@ -266,7 +282,7 @@ namespace KZTool
             {
                 label1.Text = "Katana ZERO is not running";
                 groupBox1.Enabled = false;
-                timer1.Enabled = true;
+                timer_findGame.Enabled = true;
                 timer_read.Enabled = false;
             }
         }
@@ -303,42 +319,6 @@ namespace KZTool
                 }
             }
             return result;
-        }
-
-
-        private void Hotkey_MouseDown(object sender, MouseEventArgs e)
-        {
-            ((TextBox)sender).Text = "";
-        }
-
-        private void Hotkey_KeyDown(object sender, KeyEventArgs e)
-        {
-            bool isLetterOrDigit = char.IsLetterOrDigit((char)e.KeyCode);
-
-            if (isLetterOrDigit)
-            {
-                // Format modifier text and generate modifier int for hotkey construction
-                string mod = "";
-                int imod = 0x0;
-
-                if (e.Modifiers.ToString() != "None")
-                {
-                    mod = e.Modifiers.ToString().Replace(",", " +") + " + ";
-
-                    foreach (var m in e.Modifiers.ToString().Replace(" ", "").Split(','))
-                    {
-                        if (m == "Control") imod += GlobalHotkey.Constants.CTRL;
-                        else if (m == "Alt") imod += GlobalHotkey.Constants.ALT;
-                        else if (m == "Shift") imod += GlobalHotkey.Constants.SHIFT;
-                    }
-                }
-
-                GlobalHotkey hotkey = (GlobalHotkey)(((TextBox)sender).Tag); // Textboxes are tagged with corresponding GlobalHotkey in Form1 constructor
-
-                hotkey.ChangeBind(imod, e.KeyCode);
-
-                ((TextBox)sender).Text = mod + e.KeyCode;
-            }
         }
 
     }

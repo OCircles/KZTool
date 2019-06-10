@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer_findGame = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonRoomList = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -48,16 +48,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer_read = new System.Windows.Forms.Timer(this.components);
             this.timer_switchLock = new System.Windows.Forms.Timer(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timer1
+            // timer_findGame
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer_findgame_Tick);
+            this.timer_findGame.Enabled = true;
+            this.timer_findGame.Interval = 1000;
+            this.timer_findGame.Tick += new System.EventHandler(this.timer_findgame_Tick);
             // 
             // groupBox1
             // 
@@ -236,11 +235,6 @@
             this.timer_switchLock.Interval = 1000;
             this.timer_switchLock.Tick += new System.EventHandler(this.Timer_switchLock_Tick);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,7 +260,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer_findGame;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonSetRoom;
@@ -284,7 +278,6 @@
         private System.Windows.Forms.TextBox hotkeyHardReset;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonRoomList;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 
